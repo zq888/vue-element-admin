@@ -13,14 +13,9 @@ export default function checkPermission(value) {
     const hasPermission = roles.some(role => {
       return permissionRoles.includes(role)
     })
-
-    if (!hasPermission) {
-      return false
-    }
-    return true
+    return hasPermission
   } else {
     console.error(`need roles! Like v-permission="['admin','editor']"`)
     return false
   }
 }
-
